@@ -1,0 +1,30 @@
+<div class="container">
+    <table>
+        <thead>
+            <th>shareID</th>
+            <th>sharename</th>
+            <th>shareprice</th>
+            <th>sharestatus</th>
+            <th>Action</th>
+        </thead>
+        <tr *ngFor="let share of share">
+            <td>{{share.id}}</td>
+            <td>{{share.sharename}}</td>
+            <td>{{share.price}}</td>
+            <td>{{share.quantity}}</td>
+            <td>{{share.status}}</td>
+            <td>
+                <button class="btn btn-primary">Update</button>
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>
