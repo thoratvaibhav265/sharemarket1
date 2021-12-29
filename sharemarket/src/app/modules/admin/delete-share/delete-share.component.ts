@@ -16,8 +16,9 @@ export class DeleteShareComponent implements OnInit {
   shareId:any;
 
   constructor(private shareService: ShareService,private activatedRoute:ActivatedRoute, private formBuilder: FormBuilder, private router: Router) { };
-
-  deleteShare(){
+  
+  readShare()
+  {
     this.shareId=this.activatedRoute.snapshot.paramMap.get('id');
     this.shareService.getShareById(this.shareId).subscribe({
       next: (response: any) => {
@@ -36,7 +37,32 @@ export class DeleteShareComponent implements OnInit {
       },
     })
   }
+  deleteShare(){
+    this.shareId=this.activatedRoute.snapshot.paramMap.get('id');
+    this.shareService.deleteShareById(this.shareId).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        Swal.fire({
+          icon: 'error',
+          title: 'Share deleted',
+          text: 'Share Deleted!',
+        });
+      },
+      error: (error: any) => {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Share to delete',
+          text: 'Share Deleted!',
+        });
+      },
+      complete: () => {
+        console.log('Complete');
+      },
+    })
+  }
   ngOnInit(): void {
+    this.readShare();
   }
 
 }
