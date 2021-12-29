@@ -4,6 +4,7 @@ import { HomeComponent } from './common/home/home.component';
 import { AddShareComponent } from './modules/admin/add-share/add-share.component';
 import { AdminDashboardComponent } from './modules/admin/admin-dashboard/admin-dashboard.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
+import { ViewShareComponent } from './modules/admin/view-share/view-share.component';
 import { TraderLoginComponent } from './modules/trader/trader-login/trader-login.component';
 import { TraderRegisterComponent } from './modules/trader/trader-register/trader-register.component';
 
@@ -15,7 +16,9 @@ const routes: Routes = [
   { path: 'traderregister', component: TraderRegisterComponent},
   { path: 'traderlogin', component: TraderLoginComponent },
   { path: 'admindashboard', component:AdminDashboardComponent },
-  { path: 'addshare', component:AddShareComponent }
+  { path: 'addshare', component:AddShareComponent },
+  { path: 'watchlist', component:ViewShareComponent }
+  
    
 
 

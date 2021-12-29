@@ -1,5 +1,6 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <table>
+    <table class="table table-hover" style="border: blue; padding: auto; border-radius: 10px; border-width: 5px;">
         <thead>
             <th>shareID</th>
             <th>sharename</th>
@@ -14,8 +15,8 @@
             <td>{{share.quantity}}</td>
             <td>{{share.status}}</td>
             <td>
-                <button class="btn btn-primary">Update</button>
-                <button class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary">Update</button>
+                <button type="button" class="btn btn-warning">Delete</button>
             </td>
         </tr>
     </table>

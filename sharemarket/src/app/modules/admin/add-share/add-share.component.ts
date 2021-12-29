@@ -17,14 +17,16 @@ export class AddShareComponent implements OnInit {
   adminId:any;
 
 
-  constructor(private shareService: ShareService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private shareService: ShareService,private formBuilder: FormBuilder, private router: Router) {this.initAddShareForm(); }
 
   initAddShareForm() {
     this.createShare = this.formBuilder.group({
 
       sharename:new FormControl('', Validators.required),
       price:new FormControl('', Validators.required),
-      quantity:new FormControl('', Validators.required)
+      quantity:new FormControl('', Validators.required),
+      status:new FormControl('Standing', Validators.required)
+
 
     })
   }
@@ -34,6 +36,11 @@ export class AddShareComponent implements OnInit {
     this.shareService.addShare(this.adminId,this.createShare.value).subscribe({
       next: (response: any) => {
         console.log(response);
+        if(response!=null)
+        {
+          this.router.navigate(['watchlist'])
+        }
+
       },
       error: (error: any) => {
         console.log(error);
@@ -49,5 +56,7 @@ export class AddShareComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+
+
   }
 }
