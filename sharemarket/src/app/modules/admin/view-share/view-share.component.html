@@ -14,18 +14,8 @@
             <td>{{share.price}}</td>
             <td>{{share.quantity}}</td>
             <td>{{share.status}}</td>
-            <td>
-                <button type="button" class="btn btn-secondary">Update</button>
-                <button type="button" class="btn btn-warning">Delete</button>
-            </td>
+            <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', share.id]">UPDATE</a></td>
+            <td><a class="btn btn-danger shadow-sm" [routerLink]="['/delete', share.id]">DELETE</a></td>  
         </tr>
     </table>
-
-
-
-
-
-
-
-
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Admin } from 'src/classes/admin';
 import { ShareService } from 'src/services/share.service';
 import Swal from 'sweetalert2';
@@ -14,8 +14,9 @@ export class UpdateShareComponent implements OnInit {
 
   updateShare!: FormGroup
   adminId!:any
+  shareId!:any
 
-  constructor(private shareService: ShareService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private shareService: ShareService,private activatedRoute:ActivatedRoute, private formBuilder: FormBuilder, private router: Router) { }
 
   initAddShareForm() {
     this.updateShare = this.formBuilder.group({
@@ -31,10 +32,26 @@ export class UpdateShareComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  readShare()
+  {
+    this.shareId=this.activatedRoute.snapshot.paramMap.get('id');
+    this.shareService.getShareById()
+
+
+
+
+
+
+
+
+
+
+  }
+
   updateShares(){
     {
       this.adminId=Number(localStorage.getItem('adminId'));
-      this.shareService.addShare(this.adminId,this.updateShare.value).subscribe({
+      this.shareService.updateShareById(this.adminId,this.updateShare.value).subscribe({
         next: (response: any) => {
           console.log(response);
           if(response!=null)
