@@ -1,0 +1,19 @@
+<div class="center">
+    <h1>Create Share</h1>
+<form [formGroup]="updateShare" (ngSubmit)="updateShares()">
+    <div class="form-group">
+      <label for="shareName">ShareName</label>
+      <input type="shareName" class="form-control" formControlName="sharename"id="sharename" placeholder="Enter Share Name">
+    </div>
+    <div class="form-group">
+        <label for="shareprice">Price of Share</label>
+        <input type="shareprice" class="form-control" formControlName="price" id="shareprice" aria-describedby="pricehelp" placeholder="Enter Share price">
+      </div>
+      <div class="form-group">
+        <label for="shareQuantity">Quantity</label>
+        <input type="quant" class="form-control" formControlName="quantity" id="quant" aria-describedby="quantHelp" placeholder="Enter quantity fo share">
+      </div>
+      <input type="hidden" formControlName="status">
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+#home-section {
+    margin: 80px 0px;
+  }
+  #home-section .container {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  #home-section .container h3 {
+    padding: 0px 0px 30px 0px;
+    margin: 0px;
+    text-align: center;
+    min-width: 100%;
+  }
+  #home-section .container .card-container .card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  

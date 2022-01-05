@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <table class="table table-hover" style="border: blue; padding: auto; border-radius: 10px; border-width: 5px;">
+        <thead style="height: max-content;background-color: cornsilk;margin-top: auto;">
+            <th>shareID</th>
+            <th>sharename</th>
+            <th>shareprice</th>
+            <th>shareQuantity</th>
+            <th>sharestatus</th>
+            <th>Action</th>
+        </thead>
+        <tr *ngFor="let share of share">
+            <td>{{share.id}}</td>
+            <td>{{share.sharename}}</td>
+            <td>{{share.price}}</td>
+            <td>{{share.quantity}}</td>
+            <td>{{share.status}}</td>
+            <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', share.id]">UPDATE</a></td>
+            <td><a class="btn btn-danger shadow-sm" [routerLink]="['/delete', share.id]">DELETE</a></td>  
+        </tr>
+    </table>
+</div>

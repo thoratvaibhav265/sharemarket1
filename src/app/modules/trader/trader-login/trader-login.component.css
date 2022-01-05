@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+}
+.center {
+  margin: 10px 10px 10px 250px;
+  width: 60%;
+  border: 3px solid #73ad21;
+  padding: 10px;
+  color: black;
+}

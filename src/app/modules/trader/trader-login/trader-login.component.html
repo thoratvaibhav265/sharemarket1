@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="center">
+  <h1>User Login</h1>
+<form [formGroup]="traderLoginGroup" (ngSubmit)="traderLogin()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text" formControlName="emailId" name="emailid" pattern=".+@globex\.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" formControlName="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
+</div>
