@@ -26,7 +26,10 @@ const routes: Routes = [
   { path: 'update/:id', component:UpdateShareComponent },
   { path: 'delete/:id', component:DeleteShareComponent },
   { path: 'sharemarket', component:SharesListComponent } ,
-  { path: 'buyshares', component:BuyShareComponent} 
+  { path: 'sharesbuy/:id', component:BuyShareComponent}
+  
+
+  
   
    
 

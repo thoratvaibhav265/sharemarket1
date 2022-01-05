@@ -14,7 +14,7 @@
             <td>{{share1.sharename}}</td>
             <td>{{share1.price}}</td>
             <td>{{share1.quantity}}</td>
-            <button type="button" class="btn btn-warning" routerLink="/buyshares">Buy Share</button>
+            <button type="button" class="btn btn-warning" [routerLink]="['/sharesbuy',share1.id]">Buy Share</button>
              
         </tr>
     </table>

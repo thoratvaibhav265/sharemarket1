@@ -19,7 +19,8 @@ export class BuyShareComponent implements OnInit {
   activatedRoute: any;
   share!: Share;
 
-  constructor(private shareService: ShareService, private formBuilder: FormBuilder, private router: Router) { this.initBuyShareForm() }
+  constructor(private shareService: ShareService, private formBuilder: FormBuilder, private router: Router) 
+  { this.initBuyShareForm() }
 
   initBuyShareForm() {
     this.buyShares = this.formBuilder.group({
@@ -32,7 +33,7 @@ export class BuyShareComponent implements OnInit {
   updatePrice() {
     this.price = this.buyShares.controls['quantity'].value * 100;
   }
-  
+
 
   fillBuyShareForm(share: Share) {
     this.buyShares = this.formBuilder.group({
