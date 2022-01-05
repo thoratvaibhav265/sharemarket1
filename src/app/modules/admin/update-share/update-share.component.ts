@@ -43,8 +43,6 @@ export class UpdateShareComponent implements OnInit {
       price: new FormControl(share.price, Validators.required),
       quantity: new FormControl(share.quantity, Validators.required),
       status: new FormControl('Standing', Validators.required)
-
-
     })
   }
 
