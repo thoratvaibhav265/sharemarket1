@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Share } from 'src/classes/share';
 import { ShareService } from 'src/services/share.service';
 import Swal from 'sweetalert2';
@@ -16,10 +16,9 @@ export class BuyShareComponent implements OnInit {
   traderId!: any;
   price!: any;
   shareId!: any;
-  activatedRoute: any;
   share!: Share;
 
-  constructor(private shareService: ShareService, private formBuilder: FormBuilder, private router: Router) 
+  constructor(private shareService: ShareService,private activatedRoute:ActivatedRoute, private formBuilder: FormBuilder, private router: Router) 
   { this.initBuyShareForm() }
 
   initBuyShareForm() {
@@ -30,20 +29,19 @@ export class BuyShareComponent implements OnInit {
     })
   }
 
-  updatePrice() {
-    this.price = this.buyShares.controls['quantity'].value * 100;
-  }
+   updatePrice() {
+     this.price = this.buyShares.controls['quantity'].value * 100;
+     return this.price;
+   }
 
 
   fillBuyShareForm(share: Share) {
     this.buyShares = this.formBuilder.group({
-
       sharename: new FormControl(share.sharename, Validators.required),
-      quantity: new FormControl(share.quantity, Validators.required),
+      quantity: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required)
     })
   }
-
 
   readShare() {
     this.shareId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -97,6 +95,9 @@ export class BuyShareComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.readShare();
+    this.updatePrice();
+
   }
 
 }

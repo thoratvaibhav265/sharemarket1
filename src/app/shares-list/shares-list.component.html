@@ -7,7 +7,7 @@
             <th>shareprice</th>
             <th>shareQuantity</th>
 
-            
+
         </thead>
         <tr *ngFor="let share1 of share">
             <td>{{share1.id}}</td>
@@ -15,7 +15,7 @@
             <td>{{share1.price}}</td>
             <td>{{share1.quantity}}</td>
             <button type="button" class="btn btn-warning" [routerLink]="['/sharesbuy',share1.id]">Buy Share</button>
-             
+
         </tr>
     </table>
 </div>
